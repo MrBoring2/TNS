@@ -5,6 +5,8 @@ namespace TNS_API.Data
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     [Table("AbonentEquipment")]
     public partial class AbonentEquipment
@@ -42,6 +44,7 @@ namespace TNS_API.Data
         public string Address { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Abonent> Abonent { get; set; }
     }
 }

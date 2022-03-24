@@ -16,6 +16,10 @@ namespace TNS_API.Controllers
     {
         private TNS_Context db = new TNS_Context();
 
+        public EquipmentController()
+        {
+
+        }
         // GET: api/Equipment
         [Route("api/Equipment/Magistral")]
         public IHttpActionResult GetMagistral() 

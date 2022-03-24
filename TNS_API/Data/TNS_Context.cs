@@ -8,8 +8,9 @@ namespace TNS_API.Data
     public partial class TNS_Context : DbContext
     {
         public TNS_Context()
-            : base("name=TNS_Context")
+            : base("name=TNS_ContextHome")
         {
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Abonent> Abonent { get; set; }

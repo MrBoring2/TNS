@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c29da15c-c091-4232-a2ea-8e01dca7bd9f": {
+      "ProjectGuid": "c29da15c-c091-4232-a2ea-8e01dca7bd9f",
+      "DisplayName": "TNS_Mobile",
+      "ColorIndex": 0
+    },
+    "0e0dda51-b4e6-46a6-b4a0-70cfb760f949": {
+      "ProjectGuid": "0e0dda51-b4e6-46a6-b4a0-70cfb760f949",
+      "DisplayName": "TNS_API",
+      "ColorIndex": 1
+    },
+    "42faf4ed-545f-43b6-949e-82616492b958": {
+      "ProjectGuid": "42faf4ed-545f-43b6-949e-82616492b958",
+      "DisplayName": "TNS_Mobile.Android",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

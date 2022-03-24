@@ -9,7 +9,6 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using TNS_Mobile.POCO_Models;
 using TNS_Mobile.Services;
-using Xamarin.Android.Net;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -54,11 +53,11 @@ namespace TNS_Mobile.Pages
                     {
                         try
                         {
-                            var handler = new HttpClientHandler();
-                            handler.Proxy = new WebProxy { Address = new Uri("http://172.20.1.3:8080"), BypassProxyOnLocal = false, UseDefaultCredentials = false, Credentials = new NetworkCredential(userName: "serg", password: "7376") };
+                            //var handler = new HttpClientHandler();
+                            //handler.Proxy = new WebProxy { Address = new Uri("http://172.20.1.3:8080"), BypassProxyOnLocal = false, UseDefaultCredentials = false, Credentials = new NetworkCredential(userName: "serg", password: "7376") };
 
                             var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, $"{ClientService.APIUrl}api/Equipment/Magistral");
-                            request.Headers.Add("Connection", "close");
+                            //request.Headers.Add("Connection", "close");
                             var response = await ClientService.Instance.HttpClient.SendAsync(request);
                             if (response.StatusCode == System.Net.HttpStatusCode.OK)
                             {
@@ -75,7 +74,7 @@ namespace TNS_Mobile.Pages
                 case "Сети доступа":
                     {
                         var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, $"{ClientService.APIUrl}api/Equipment/SetiDostupa");
-                        request.Headers.Add("Connection", "close");
+                        // request.Headers.Add("Connection", "close");
                         var response = await ClientService.Instance.HttpClient.SendAsync(request);
                         if (response.StatusCode == System.Net.HttpStatusCode.OK)
                         {
@@ -86,14 +85,21 @@ namespace TNS_Mobile.Pages
                     break;
                 case "Оборудование абонентов":
                     {
-                        var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, $"{ClientService.APIUrl}api/Equipment/AbonentEquipment");
-                        request.Headers.Add("Connection", "close");
-                        var response = await ClientService.Instance.HttpClient.SendAsync(request);
-                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        try
                         {
-                            var result = JsonSerializer.Deserialize<List<AbonentEquipment>>(await response.Content.ReadAsStringAsync());
+                            var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, $"{ClientService.APIUrl}api/Equipment/AbonentEquipment");
+                            //request.Headers.Add("Connection", "close");
+                            var response = await ClientService.Instance.HttpClient.SendAsync(request);
+                            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                            {
+                                var result = JsonSerializer.Deserialize<List<AbonentEquipment>>(await response.Content.ReadAsStringAsync());
 
-                            MyListView.ItemsSource = result;
+                                MyListView.ItemsSource = result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+
                         }
                     }
                     break;

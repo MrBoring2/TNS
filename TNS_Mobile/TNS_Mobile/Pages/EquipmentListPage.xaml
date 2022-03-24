@@ -4,7 +4,7 @@
              x:Class="TNS_Mobile.Pages.EquipmentListPage">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
@@ -12,18 +12,18 @@
             <Label Text="Тип оборудования"/>
             <Picker ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedType}"/>
         </StackLayout>
-        <ListView x:Name="MyListView" Grid.Row="1"
+        <ListView x:Name="MyListView" Grid.Row="1" Margin="5" RowHeight="60"
             ItemsSource="{Binding Equipments}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
             <!--Built in Cells-->
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell Height="50">
                         <StackLayout>
                             <Label Text="{Binding Name}" 
                    Style="{DynamicResource ListItemTextStyle}" />
-                            <Label Text="{Binding SeriesNumbe}" 
+                            <Label Text="{Binding SeriesNumber}" 
                    Style="{DynamicResource ListItemDetailTextStyle}"/>
                         </StackLayout>
                     </ViewCell>
