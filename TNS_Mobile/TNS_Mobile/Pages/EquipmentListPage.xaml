@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TNS_Mobile.Pages.EquipmentListPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <StackLayout>
+            <Label Text="Тип оборудования"/>
+            <Picker ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedType}"/>
+        </StackLayout>
+        <ListView x:Name="MyListView" Grid.Row="1"
+            ItemsSource="{Binding Equipments}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement">
+            <!--Built in Cells-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Name}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+                            <Label Text="{Binding SeriesNumbe}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>
