@@ -24,6 +24,7 @@ namespace TNS_Mobile.Pages
         {
             InitializeComponent();
             Initialize();
+            Title = "Список оборудования";
             BindingContext = this;
         }
         private void Initialize()
@@ -36,7 +37,7 @@ namespace TNS_Mobile.Pages
                 "Сети доступа",
                 "Оборудование абонентов"
             };
-            SelectedType = Types.FirstOrDefault();
+            selectedType = Types.FirstOrDefault();
         }
 
         public List<string> Types { get; set; }
@@ -130,6 +131,36 @@ namespace TNS_Mobile.Pages
 
             //Deselect Item
             //((ListView)sender).SelectedItem = null;
+        }
+
+        private async void Options_Clicked(object sender, EventArgs e)
+        {
+            var equipment = MyListView.SelectedItem;
+            if (equipment == null)
+                return;
+            MyListView.SelectedItem = null;
+           
+            if (equipment is Magistral magistral)
+            {
+                await Navigation.PushAsync(new MagistralOptionsPage(magistral));
+            }
+            else if (equipment is SetiDostupa setiDostupa)
+            {
+                await Navigation.PushAsync(new SetiDostupaOprtionsPage(setiDostupa));
+            }
+            else if (equipment is AbonentEquipment abonentEquipment)
+            {
+                await Navigation.PushAsync(new AbonentEquipmentOptionsPage(abonentEquipment));
+            }
+            else
+            {
+                await DisplayAlert("Неверное оборудование", "Внимание", "ОК");
+            }
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadData();
         }
     }
 }

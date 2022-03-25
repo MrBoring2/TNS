@@ -11,7 +11,7 @@ namespace TNS_Mobile
         {
             InitializeComponent();
 
-            MainPage = new EquipmentListPage();
+            MainPage = new NavigationPage(new EquipmentListPage());
         }
 
         protected override void OnStart()

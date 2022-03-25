@@ -37,21 +37,7 @@ namespace TNS_API.Controllers
             return Ok(db.AbonentEquipment);
         }
 
-        // GET: api/Equipment/5
-        [ResponseType(typeof(Magistral))]
-        public IHttpActionResult GetMagistral(int id)
-        {
-            Magistral magistral = db.Magistral.Find(id);
-            if (magistral == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(magistral);
-        }
-
-        // PUT: api/Equipment/5
-        [ResponseType(typeof(void))]
+        [Route("api/Equipment/Magistral/{id}")]
         public IHttpActionResult PutMagistral(int id, Magistral magistral)
         {
             if (!ModelState.IsValid)
@@ -64,7 +50,9 @@ namespace TNS_API.Controllers
                 return BadRequest();
             }
 
+            //var equipment = db.Magistral.Find(id);
             db.Entry(magistral).State = EntityState.Modified;
+            //db.Entry(equipment).CurrentValues.SetValues(magistral);
 
             try
             {
@@ -82,8 +70,95 @@ namespace TNS_API.Controllers
                 }
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return StatusCode(HttpStatusCode.OK);
         }
+        [Route("api/Equipment/SetiDostupa/{id}")]
+        public IHttpActionResult PutSetiDostupa(int id, SetiDostupa setiDostupa)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != setiDostupa.Id)
+            {
+                return BadRequest();
+            }
+
+            // var equipment = db.SetiDostupa.Find(id);
+            db.Entry(setiDostupa).State = EntityState.Modified;
+            // db.Entry(equipment).CurrentValues.SetValues(setiDostupa);
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SetiDostupaExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.OK);
+        }
+        [Route("api/Equipment/AbonentEquipment/{id}")]
+        public IHttpActionResult PutAbonentEquipment(int id, AbonentEquipment abonentEquipment)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != abonentEquipment.Id)
+            {
+                return BadRequest();
+            }
+
+            //var equipment = db.AbonentEquipment.Find(id);
+            db.Entry(abonentEquipment).State = EntityState.Modified;
+            //db.Entry(equipment).CurrentValues.SetValues(abonentEquipment);
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AbonentEquipmentExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.OK);
+        }
+
+
+
+
+        // GET: api/Equipment/5
+        [ResponseType(typeof(Magistral))]
+        public IHttpActionResult GetMagistral(int id)
+        {
+            Magistral magistral = db.Magistral.Find(id);
+            if (magistral == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(magistral);
+        }
+
 
         // POST: api/Equipment
         [ResponseType(typeof(Magistral))]
@@ -128,6 +203,14 @@ namespace TNS_API.Controllers
         private bool MagistralExists(int id)
         {
             return db.Magistral.Count(e => e.Id == id) > 0;
+        }
+        private bool SetiDostupaExists(int id)
+        {
+            return db.SetiDostupa.Count(e => e.Id == id) > 0;
+        }
+        private bool AbonentEquipmentExists(int id)
+        {
+            return db.AbonentEquipment.Count(e => e.Id == id) > 0;
         }
     }
 }

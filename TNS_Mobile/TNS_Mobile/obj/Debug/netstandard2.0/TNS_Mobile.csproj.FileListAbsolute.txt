@@ -48,3 +48,6 @@ C:\Users\user452.CHENK\.ssh\TNS\TNS_Mobile\TNS_Mobile\obj\Debug\netstandard2.0\T
 C:\Users\user452.CHENK\.ssh\TNS\TNS_Mobile\TNS_Mobile\obj\Debug\netstandard2.0\TNS_Mobile.dll
 C:\Users\user452.CHENK\.ssh\TNS\TNS_Mobile\TNS_Mobile\obj\Debug\netstandard2.0\ref\TNS_Mobile.dll
 C:\Users\user452.CHENK\.ssh\TNS\TNS_Mobile\TNS_Mobile\obj\Debug\netstandard2.0\TNS_Mobile.pdb
+C:\Users\user452.CHENK\.ssh\TNS\TNS_Mobile\TNS_Mobile\obj\Debug\netstandard2.0\Pages\AbonentEquipmentOptionsPage.xaml.g.cs
+C:\Users\user452.CHENK\.ssh\TNS\TNS_Mobile\TNS_Mobile\obj\Debug\netstandard2.0\Pages\MagistralOptionsPage.xaml.g.cs
+C:\Users\user452.CHENK\.ssh\TNS\TNS_Mobile\TNS_Mobile\obj\Debug\netstandard2.0\Pages\SetiDostupaOprtionsPage.xaml.g.cs

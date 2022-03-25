@@ -30,7 +30,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button HorizontalOptions="Fill" VerticalOptions="End" Margin="5" Grid.Row="2" Text="Настойка"/>
+        <Button x:Name="Options" HorizontalOptions="Fill" VerticalOptions="End" Margin="5" Grid.Row="2" Text="Настойка" Clicked="Options_Clicked"/>
     </Grid>
 
 </ContentPage>
