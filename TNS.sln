@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNS_Mobile.Android", "TNS_Mobile\TNS_Mobile.Android\TNS_Mobile.Android.csproj", "{42FAF4ED-545F-43B6-949E-82616492B958}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TNS_Mobile", "TNS_Mobile\TNS_Mobile\TNS_Mobile.csproj", "{C29DA15C-C091-4232-A2EA-8E01DCA7BD9F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNS_API", "TNS_API\TNS_API.csproj", "{0E0DDA51-B4E6-46A6-B4A0-70CFB760F949}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop_TNS", "Desktop_TNS\Desktop_TNS.csproj", "{F9B62431-010B-4A5F-87DD-91D4C1594A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{42FAF4ED-545F-43B6-949E-82616492B958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42FAF4ED-545F-43B6-949E-82616492B958}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42FAF4ED-545F-43B6-949E-82616492B958}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{42FAF4ED-545F-43B6-949E-82616492B958}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42FAF4ED-545F-43B6-949E-82616492B958}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42FAF4ED-545F-43B6-949E-82616492B958}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{C29DA15C-C091-4232-A2EA-8E01DCA7BD9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C29DA15C-C091-4232-A2EA-8E01DCA7BD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C29DA15C-C091-4232-A2EA-8E01DCA7BD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C29DA15C-C091-4232-A2EA-8E01DCA7BD9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E0DDA51-B4E6-46A6-B4A0-70CFB760F949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E0DDA51-B4E6-46A6-B4A0-70CFB760F949}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E0DDA51-B4E6-46A6-B4A0-70CFB760F949}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E0DDA51-B4E6-46A6-B4A0-70CFB760F949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B62431-010B-4A5F-87DD-91D4C1594A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B62431-010B-4A5F-87DD-91D4C1594A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B62431-010B-4A5F-87DD-91D4C1594A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B62431-010B-4A5F-87DD-91D4C1594A75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
