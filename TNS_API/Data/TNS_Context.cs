@@ -8,7 +8,7 @@ namespace TNS_API.Data
     public partial class TNS_Context : DbContext
     {
         public TNS_Context()
-            : base("name=TNS_ContextHome")
+            : base("name=TNS_Context")
         {
             Configuration.ProxyCreationEnabled = false;
         }

@@ -8,7 +8,7 @@ namespace TNS_Mobile.Services
 {
     public class ClientService
     {
-        public const string APIUrl = "http://192.168.0.102:62623/";
+        public const string APIUrl = "http://172.20.1.165:62623/";
         private static ClientService instanse;
   
         private ClientService() { }

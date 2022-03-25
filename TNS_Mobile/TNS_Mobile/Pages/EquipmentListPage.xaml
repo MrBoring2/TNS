@@ -6,10 +6,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <StackLayout>
-            <Label Text="Тип оборудования"/>
+            <Label Text="Тип оборудования" FontSize="16"/>
             <Picker ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedType}"/>
         </StackLayout>
         <ListView x:Name="MyListView" Grid.Row="1" Margin="5" RowHeight="60"
@@ -30,6 +30,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button HorizontalOptions="Fill" VerticalOptions="End" Margin="5" Grid.Row="2" Text="Настойка"/>
     </Grid>
 
 </ContentPage>

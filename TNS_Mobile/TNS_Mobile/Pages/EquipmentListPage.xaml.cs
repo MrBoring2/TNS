@@ -26,12 +26,10 @@ namespace TNS_Mobile.Pages
             Initialize();
             BindingContext = this;
         }
-        public ObservableCollection<Magistral> Magistrals { get; set; }
-        public ObservableCollection<SetiDostupa> SetiDostupas { get; set; }
-        public ObservableCollection<AbonentEquipment> AbonentEquipment { get; set; }
         private void Initialize()
-        {
-            ClientService.Instance.HttpClient = new System.Net.Http.HttpClient();
+        {  var handler = new HttpClientHandler();
+           //handler.Proxy = new WebProxy { Address = new Uri("http://172.20.1.3:8080"), BypassProxyOnLocal = false, UseDefaultCredentials = false, Credentials = new NetworkCredential(userName: "serg", password: "7376") };
+            ClientService.Instance.HttpClient = new System.Net.Http.HttpClient(handler);
             Types = new List<string>
             {
                 "Магистрали",
@@ -53,9 +51,6 @@ namespace TNS_Mobile.Pages
                     {
                         try
                         {
-                            //var handler = new HttpClientHandler();
-                            //handler.Proxy = new WebProxy { Address = new Uri("http://172.20.1.3:8080"), BypassProxyOnLocal = false, UseDefaultCredentials = false, Credentials = new NetworkCredential(userName: "serg", password: "7376") };
-
                             var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, $"{ClientService.APIUrl}api/Equipment/Magistral");
                             //request.Headers.Add("Connection", "close");
                             var response = await ClientService.Instance.HttpClient.SendAsync(request);
@@ -116,10 +111,25 @@ namespace TNS_Mobile.Pages
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            if (e.Item is Magistral magistral)
+            {
+
+            }
+            else if (e.Item is SetiDostupa setiDostupa)
+            {
+
+            }
+            else if (e.Item is AbonentEquipment abonentEquipment)
+            { 
+
+            }
+            else
+            {
+                await DisplayAlert("Неверное оборудование", "Внимание", "ОК");
+            }
 
             //Deselect Item
-            ((ListView)sender).SelectedItem = null;
+            //((ListView)sender).SelectedItem = null;
         }
     }
 }
